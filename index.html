@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+body {
+  margin: 0;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h3,h2{
+  font-weight: bold;
+}
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #254B7C;
+  color: #fff;
+}
+
+.header h1,p {
+  text-align: center;
+}
+.header p {
+  font-size: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #EBAC77;
+  width: 0%;
+}
+
+.content {
+  padding: 100px 0;
+  margin: 50px auto 0 auto;
+  width: 80%;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+/** {box-sizing: border-box}*/
+
+/* Full-width input fields */
+input[type=text] {
+  width: 50%;
+  padding: 15px;
+  /*margin: 5px 0 22px 0;*/
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}*/
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  /*width: 100%;*/
+  opacity: 0.9;
+    }
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  /*float: left;*/
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+  align-content: center;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+.footer{
+
+  background-color: black;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+</style>
+</head>
+<body>
+<script>
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+<div class="header">
+  <h1>DabbaWala's Event Registration</h1>
+  <p>Register Yourself by providing Your Details</p>
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+</div>
+
+    <div class="alert alert-success alert-dismissible fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong>{{ msg }}
+  </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="http://mumbaidabbawala.in/wp-content/uploads/2017/06/dabbawala-2.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="http://mumbaidabbawala.in/wp-content/uploads/2017/06/dabbawala-2.jpg" alt="Chicago" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="http://mumbaidabbawala.in/wp-content/uploads/2017/06/dabbawala-2.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<div class="content">
+
+  Now  that your next Flipkart order will get delivered bang-on time, here are  some amazing facts which you should know about Mumbai Dabbawalas rather  than worrying about your online order!
+
+<br>
+
+<h3>1. It all started from a need of a single man!</h3>
+
+
+About  125 years back, when a Parsi banker wanted to have home cooked food  regularly in office and gave this responsibility to Mr. Mahadeo Havaji  Bache. Other people also liked the idea and the demand for Dabba  delivery soared, thus marking the beginnings of the Dabbawalas.
+
+<br>
+<h3>2. These were the gentlemen who started this unique service</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="landscape ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-6253607b8aef63a4cf185f5b28d27bd1.webp" /></div>
+</div>
+Mr.  Mahadeo Havaji Bache was the one who started it and Mr. Dhondiba Medge  was the first chairman of Nutan Mumbai Tiffin Box Suppliers Charity  Trust of Mumbai, a Dabbawala cooperative which launched in 1954.
+<br>
+<h3>3. Most Dabbawalas hail from rural Maharashtra</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="irc_mut portrait ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-3d70664471898f62ebebd490f9d907de.webp" /></div>
+</div>
+Especially Pune district in Maharashtra and belong to Warkari sect.
+<br>
+<h3>4. 200,000! Yes, that's the approximate number of dabbas they deliver everyday</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="irc_mut landscape ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-6c4be7749cd548cdf8e7ce1a7d4fa1cb.webp" /></div>
+</div>
+<br>
+<h3>5. The Dabbawalas have a unique, fool-proof coding system of delivering Dabbas</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="landscape ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-6b9b5e413a6de1a97b4ea51e72873458.webp" /></div>
+</div>
+They use specific colour codes for source, train station and destination building instead of names.
+<br>
+<h3>6. They give the best management gyaan</h3>
+
+
+It's  a day long workshop where you can learn about management techniques,  the dabbawala way. i.e. almost zero error! In 2005, IIM-A featured a  case-study on the management techniques of the dabbawalas. Later, in  2010, Harvard Business School also conducted their own study on the  timely and efficient delivery system of this company.
+<br>
+<h3>7. Sir. Richard Branson actually delivered dabba when he visited Dabbawalas!</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="landscape ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-d192a9f813180b2c90c9c08ba4485c59.webp" /></div>
+</div>
+Ofcourse, he learnt a lot more than he had fun at his short stint as a dabbawala!
+<br>
+<h3>8. They have Six Sigma accuracy in the delivery process</h3>
+
+
+That means there's only 1 in 6 million chance of mistake! Super, isn't it?
+<br>
+<h3>9. ...and they're confident about it!</h3>
+
+The Lunchbox
+
+In  the movie 'The Lunchbox', there was a scene where Nimrat Kaur  complained to one of the dabbawalas, that the tiffin she sends reaches  the wrong place. The role of the delivery person was played by an actual  dabbawala, who politely mentions there is nobody out there who has ever  reported getting the wrong meal or a late delivery.
+<br>
+<h3>10. They are eco-friendly</h3>
+
+
+
+With  almost 0% paper work and mostly running on trains and bicycles,  dabbawalas are not just doing good to Mumbaikars, but nature too!
+<br>
+<h3>11. A typical dabbawala's load is about 65 Kilograms</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="landscape rg_i ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-7169cbf95e1717f576e407f56f3cda1d.webp" /></div>
+</div>
+And the fact that they efficiently carry all of this on their heads, in peak hours, is nothing short of a commendable feat.
+<br>
+<h3>12. Prince Charles is their fan!</h3>
+<div class="ui_qtext_image_outer">
+<div class="ui_qtext_image_wrapper"><img class="irc_mut landscape ui_qtext_image zoomable_in zoomable_in_feed" src="https://qph.fs.quoracdn.net/main-qimg-ea6458a654a9d8b340cafc8864c33250.webp" /></div>
+</div>
+Prince  Charles was so impressed with their service that he had even invited 2  Dabbawalas to his marriage with Camilla Parker in London.
+<br>
+<h3>13. They've never been on a strike since 1890</h3>
+
+The  only exception being the strike in 2011, after a record of 120 years of  continuous service, and that too to support Anna Hazare in his  anti-corruption campaign. The luck of Mumbaikars, that this strike was  on Parsi New Year, a public holiday in Maharashtra.
+<br>
+<h3>14. Their work numbers speak for themselves!</h3>
+
+They  deliver dabbas at the distance of 75 km, across Mumbai. Their customers  consist of 11% students, 15% businessmen, 36% government employees, 38%  employees of private sector. Their annual turnover is of Rs. 50 Crores.  What's more overwhelming is there are 5,000+ dabbawalas of which only 2  are female.
+<br>
+<h3>15. They are now tech-savy!</h3>
+
+
+
+So much so, they have their own website, a Facebook fan page and even Flipkart approaching them for last-mile delivery!
+<br>
+<h3>16. After all, they are the ones who deliver a love packed in tiffin everyday</h3>
+<br>
+<br>
+
+<h2>It is highly recommended to watch before coming in this Event</h2>
+<br>
+<p><iframe width="500" height="375" src="https://www.youtube.com/embed/N25inoCea24?feature=oembed" frameborder="0" allowfullscreen=""></iframe></p>
+
+<h3>Now that you have read about them and have eager to learn from them provide your Name and E-mail id to register yourself to attend this event</h3>
+<br>
+<br>
+<center>
+<form action="getValues" method="post">
+  <!-- <div class="container"> -->
+    {% csrf_token %}
+    <p>Please fill following details</p>
+
+
+      <!-- <label for="psw"><b>Full Name</b></label><br> -->
+      Name:&nbsp&nbsp<input type="text" placeholder="Enter your Name" name="name" required>
+      <br>
+
+      <!-- <label for="email"><b>Email</b></label> -->
+      <br>
+      Email:&nbsp&nbsp<input type="text" placeholder="Enter Email" name="email" required>
+      <br>
+      <br>
+
+
+
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" disabled="disabled"  id="submit"  onclick="on()" class="signupbtn">Yes I am In</button>
+            <!-- </div> -->
+{#&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" id="submit" value="Yes I am In" onclick="on()" disabled="disabled" class="signupbtn" />#}
+</form>
+</center><br><br>
+    This portal will not accepts name after Wednesday 12 PM<br>
+    <br><br>
+    <strong>This event will be held on 31/01/2019 Time:8:30AM to 12:00PM @Central CourtYard SUNSHINE College Campus</strong>
+    <div id="overlay" onclick="off()">
+  <div id="text">Thank You for registering See you @ Event</div>
+</div>
+
+
+</div>
+
+<div class="footer">
+  <br>
+
+  <p>This Form is Created By <a href="ravindrabosamiya.gq">Ravindra Bosamiya</a><br>
+  Follow Me on<br>
+  <a href="https://www.instagram.com/rb_23_/" class="fa fa-instagram"></a>
+  <a href="https://www.linkedin.com/in/ravindra-bosamiya-561965140/" class="fa fa-linkedin"></a>
+  </p>
+</div>
+
+<script>
+    (function() {
+    $('form > input').keyup(function() {
+
+        var empty = false;
+        $('form > input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#submit').attr('disabled', 'disabled');
+        } else {
+            $('#submit').removeAttr('disabled');
+        }
+    });
+})()
+</script>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+
+</body>
+</html>
